@@ -1,17 +1,21 @@
 var http = require("http");
 var express = require('express');
 var app = express();
-var payrollData = require('./models/PayrollData');
-
+// var payrollData = require('./models/PayrollData');
 
 // Set the view engine to ejs
 app.set('view engine', 'ejs');
 
 // index page
-app.get('/', function (req, res) {
+app.get('/', async function (req, res) {
+	// Run payroll
+	const finalResults = await require('./components')();
+
+	// console.log(finalResults)
+
 	res.render(__dirname + '/views/index', {
-		inputs: payrollData.inputs,
-		outputs: payrollData.outputs
+		inputs: finalResults.inputs,
+		outputs: finalResults.outputs
 	});
 });
 
