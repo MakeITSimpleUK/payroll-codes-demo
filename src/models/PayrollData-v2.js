@@ -6,7 +6,8 @@ module.exports = payrollData = {
   filters: {
     payFrequency: 'Weekly',
     agency: ['agency1_id', 'agency2_id'],
-    product: 'Umbrella'
+    product: 'Umbrella',
+    workers: ['candidate1_id', 'candidate2_id', 'candidate3_id']
   },
 
   payroll: {
@@ -17,7 +18,6 @@ module.exports = payrollData = {
     statutoryRate: {}
   },
 
-  workers: ['candidate1_id', 'candidate2_id', 'candidate3_id'],
 
   workersInfo: {
     'candidate1_id': {
